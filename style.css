@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #f7c4d4, #c9d7ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Wrapper Container --- */
+.wrapper {
+  background: #fff;
+  padding: 40px 35px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  width: 380px;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+/* --- Titles --- */
+.brand {
+  font-size: 22px;
+  color: #6c63ff;
+  margin-bottom: 15px;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+/* --- Input Fields --- */
+.input-box {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.input-box label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #aaa;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+/* Focus Animation */
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -10px;
+  left: 5px;
+  color: #6c63ff;
+  font-size: 13px;
+}
+
+.input-box input:focus {
+  border-bottom-color: #6c63ff;
+}
+
+/* --- Button --- */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #6c63ff;
+  color: #fff;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #574fe0;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
+}
+
+/* --- Links --- */
+.switch {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.switch a {
+  color: #6c63ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.switch a:hover {
+  text-decoration: underline;
+}
+
+/* --- Animation --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive --- */
+@media (max-width: 480px) {
+  .wrapper {
+    width: 90%;
+    padding: 30px 25px;
+  }
+  /* Popup Notification */
+.popup {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  background: #6c63ff;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  font-size: 14px;
+}
+
+.popup.show {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+}
